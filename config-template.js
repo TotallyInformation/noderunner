@@ -110,50 +110,6 @@ exports.locations = {
 		clientDescr: 'Test2 (CMD)',
         srcUrl: '/ts/test2.cmd',
 		help: 'A test script using Windows Command Shell.'
-	},
-	'List-InstalledSoftware': {
-		script: 'C:/Users/Julian/Copy/Apps/PowerShell-Scripts/List-InstalledSoftware.ps1', 
-		type: 'PowerShell', 
-		outWrap: ['<div class="stdout">', '</div>'],
-		clientDescr: 'List Installed Software (PowerShell)',
-		help: 'Lists all the software installed on the host machine.'
-	},
-	'outputAllO365Users': {
-		script: path.join(__dirname, 'ps', 'O365AD-AllUsers.ps1'), 
-		type: 'PowerShell',
-		outWrap: ['<div class="stdout">', '</div>'],
-		clientDescr: 'Output All Office 365 Users to CSV (PowerShell)',
-        srcUrl: '/ps/O365AD-AllUsers.ps1',
-		help: 'Lists all Office 365 users & outputs to a dated CSV file in the same folder.'
-	},
-	'List-AllSpoSites': {
-		script: path.join(__dirname, 'ps', 'List-AllSpoSites.ps1'), 
-		type: 'PowerShell',
-        outFiles: { 
-            'ListAllSites.csv': {
-                url: '/ps/ListAllSites.csv',
-                file: path.join(__dirname, 'ps', 'ListAllSites.csv')
-            }
-        },
-		outWrap: ['', ''],
-		clientDescr: 'List All Sites on SharePoint Online (PowerShell)',
-        srcUrl: '/ps/List-AllSpoSites.ps1',
-		help: 'Lists all ShrePoint Site Collections in our Office 365 tenancy (NHSEngland) with additional info.'
-	},
-	'Reset-Password': { // Reset a users password
-		script:      path.join(__dirname, 'ps', 'reset-UserPassword.ps'), // location of input file
-		type:        'PowerShell', // 1st part of command name to run - also used in display
-		
-		outWrap:     ['<div class="stdout">', '</div>'], // html wrap FOR EACH LINE OF OUTPUT
-        inputs:       { //'pw':{} }], // Optional input fields to pass to script, text only for now. ['paramName1','paramName2']
-            'pw':{
-                'type':'text',
-                'label':'Enter Parm 1',
-            }
-        },
-		clientDescr: 'Reset a password (PowerShell)', // Description used in client selector
-        srcUrl:      '/ps/reset-UserPassword.ps1',
-		help:        'Reset the password for an individual user.' // info to display in client
 	}
 };
 
