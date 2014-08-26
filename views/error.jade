@@ -1,0 +1,14 @@
+//- Displays error information
+extends layout
+
+block title
+  title Node Runner Error
+
+block heading
+  h1 Node Runner Error
+  p Node Runner has experienced an error, details below.
+
+block message
+  h2= error.status
+  pre #{error.stack}
+  p !{message}

@@ -1,0 +1,44 @@
+//- Display Source Code
+extends layout
+
+block title
+  title Node Runner: Source Viewer
+
+block heading
+  h1 Node Runner - Source Code for !{scriptName}
+
+block message
+  //- Any 'message' to this page is from an error on the server
+  p.stderr !{message}
+
+block content
+  script(type="syntaxhighlighter", class="brush: " + type )
+    | <![CDATA[ 
+    !{code}
+    | ]]>
+
+block styles
+  link(rel='stylesheet', href='/hi/shCore.css')
+  link(rel='stylesheet', href='/hi/shThemeMidnight.css')
+
+block scripts
+  //- Syntax Highlighter: http://alexgorbatchev.com/SyntaxHighlighter
+  script(src="/hi/shCore.js")
+  script(src="/hi/shAutoloader.js")
+  script
+    | SyntaxHighlighter.autoloader(
+    |   'js jscript javascript  /hi/shBrushJScript.js',
+    |   'ps1 ps powershell      /hi/shBrushPowerShell.js',
+    |   'bas vba vb vbnet       /hi/shBrushVb.js',
+    |   'xml xhtml xslt html    /hi/shBrushXml.js',
+    |   'perl pl                /hi/shBrushPerl.js',
+    |   'php                    /hi/shBrushPhp.js',
+    |   'bat cmd txt text plain /hi/shBrushPlain.js',
+    |   'py python              /hi/shBrushPython.js',
+    |   'diff patch pas         /hi/shBrushDiff.js',
+    |   'bash shell             /hi/shBrushBash.js',
+    |   'cpp c                  /hi/shBrushCpp.js',
+    |   'c# c-sharp csharp      /hi/shBrushCSharp.js',
+    |   'css                    /hi/shBrushCss.js'
+    | );
+    | SyntaxHighlighter.all();

@@ -1,0 +1,6 @@
+#stdout     {}
+.stderr     {color:#990000; background-color:#DDBBBB;white-space:pre-line;font-family:monospace;}
+.stdout     {font-family:monospace;white-space:pre-line;}
+#frmSelect  {float:left}
+#frmNote    {float:right}
+.clear      {clear:both}

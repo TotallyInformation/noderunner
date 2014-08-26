@@ -1,0 +1,25 @@
+//- Shows Login Form
+extends layout
+
+block title
+  title About Node Runner
+
+block heading
+  h1 Node Runner Login
+  p This is NodeRunner, a small Node.js app for running native host commands and returning the output to the client browser.
+  p The app is designed to be reasonably secure and you will need a login in order to run anything or see any output.
+
+block message
+  //- Any message to this page is from an error
+  p.stderr !{message}
+  //- Display the login form - POST to same route
+  form(method='post',action='')
+    label(for='username') User Name: 
+    input(type='text',name='username',id='username')        
+    label(for='password') , &nbsp; Password: 
+    input(type='text',name='password',id='password')
+    br
+    input(type='submit',name='submit',value='                                                       Submit                                                      ').submit-button
+  //- @todo: This needs moving so it doesn't get put into GitHub!
+  hr
+  p If you need a login for this system, please contact Julian Knight or David Unsworth in Corporate ICT

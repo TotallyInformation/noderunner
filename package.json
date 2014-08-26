@@ -1,0 +1,51 @@
+{
+  "name": "NodeRunner",
+  "version": "0.2.1",
+  "description": "Node OS Command Runner - run native OS commands via a web service",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "webmin"
+  ],
+  "bugs": {
+    "email": "jk.noderunner@totallyinformation.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Julian Knight",
+    "email": "jk.noderunner@totallyinformation.com",
+    "url": "http://www.totallyinformation.com"
+  },
+  "files": [
+    "public",
+    "views",
+    "ts",
+    "app.js",
+    "config.js",
+    "index.html",
+    "MIT-License.htm",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=0.10"
+  },
+  "engineStrict": true,
+  "dependencies": {
+    "body-parser": "^1.6.5",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.2",
+    "cookie-session": "^1.0.2",
+    "express": "^4.6.1",
+    "express-session": "^1.7.6",
+    "jade": "^1.4.2",
+    "morgan": "^1.2.3",
+    "normalize.css": "^3.0.1",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "serve-index": "^1.1.4",
+    "socket.io": "^1.0.6",
+    "underscore": "^1.6.0"
+  }
+}

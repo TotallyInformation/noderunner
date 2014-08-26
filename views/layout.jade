@@ -1,0 +1,24 @@
+//- This is the master layout file, other jade files extend this filling in the blocks
+doctype html
+html
+  head
+    block title
+      title Node Runner
+    link(rel='stylesheet', href='/normalize.css')
+    link(rel='stylesheet', href='/style.css')
+    block styles
+  body
+    div.menu
+      a(href="/") Main Page
+      | &nbsp; 
+      a(href="/output") Output
+      | &nbsp; 
+      a(href="/about") About
+      | &nbsp; 
+      a(href="/logout") Logout
+    block heading
+    block message
+    block content
+    block scripts
+      //- script(src="//code.jquery.com/jquery-1.11.1.min.js")
+      script(src="/jquery-2.1.1.min.js")

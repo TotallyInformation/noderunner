@@ -1,0 +1,48 @@
+//- The main (root) page
+extends layout
+
+block title
+  title Node Runner
+
+block heading
+  h1 Node Runner - Select and Run a script
+  p Select the required script from the drop-down and press the Go button.
+  p Immediate output (and errors) appear below. Some scripts may be defined with input and/or output files or with input text
+
+block message
+  //- Any 'message' to this page is from an error on the server
+  p.stderr !{message}
+
+block content
+  div#runmenu
+    //- The main run menu - the select dropdown is populated by script - floats left
+    //- Any input to this form is sent back to the server via SockeIO when the "Run" button is pressed (triggers the "go" event)
+    form#frmSelect(action="")
+      select#selectScript(autofocus)
+      button Run
+      //- DIV to hold any "help" message from the script definition
+      div#help
+      //- Optional list of input boxes (passed by SocketIO)
+      ol#inp
+    //- Send a note to other users via SocketIO - floats right
+    form#frmNote(action="")
+      input#m(autocomplete="off")
+      button Send
+    //- Clear the floats
+    div.clear
+  //- Optional list of input files required (passed by SocketIO) - uploads to server
+  ol#ifile
+  //- DIV to hold the output from any other messages including notes (passed by SocketIO)
+  div#messages
+  //- List of output files passed from server
+  ol#ofile
+  //- DIV to hold the output from the script (stdout & stderr)
+  div#stdout
+
+block scripts
+  //- script(src="//code.jquery.com/jquery-1.11.1.min.js")
+  script(src="/jquery-2.1.1.min.js")
+  //- Sockets connection between server & client so no page reloads needed
+  script(src="/socket.io/socket.io.js")
+  //- My local code
+  script(src="/browser.js")
