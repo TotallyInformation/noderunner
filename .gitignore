@@ -4,6 +4,7 @@
 ps
 hostcert.pem
 hostkey.pem
+config.js
 # Anything that starts with an underscore
 _*
 
